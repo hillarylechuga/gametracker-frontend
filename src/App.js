@@ -13,7 +13,7 @@ function App() {
   // Cargar reseñas del backend al iniciar
   useEffect(() => {
     axios
-      .get("https://gametracker-hl.onrender.com")
+      .get("https://gametracker-hl.onrender.com/api/resenas")
       .then((res) => setResenas(res.data))
       .catch((err) => console.error("Error al cargar reseñas:", err));
   }, []);
@@ -30,7 +30,7 @@ function App() {
     };
 
     try {
-      const res = await axios.post("https://gametracker-hl.onrender.com", nuevaResena);
+      const res = await axios.post("https://gametracker-hl.onrender.com/api/resenas", nuevaResena);
       setResenas([...resenas, res.data]);
 
       setJuego("");
@@ -45,7 +45,7 @@ function App() {
   // Eliminar reseña
   const eliminarResena = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/resenas/${id}`);
+      await axios.delete(`https://gametracker-hl.onrender.com/api/resenas/${id}`);
       setResenas(resenas.filter((r) => r._id !== id));
     } catch (error) {
       console.error("Error al eliminar reseña:", error);
