@@ -13,7 +13,7 @@ function App() {
   // Cargar reseñas del backend al iniciar
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/resenas")
+      .get("https://gametracker-hl.onrender.com/api/resenas")
       .then((res) => setResenas(res.data))
       .catch((err) => console.error("Error al cargar reseñas:", err));
   }, []);
