@@ -1,0 +1,164 @@
+/* ======== GENERAL ======== */
+body {
+  margin: 0;
+  padding: 0;
+  background: #0a0a0a;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ======== BANNER / HEADER ======== */
+.header {
+  background: linear-gradient(135deg, #ff004c, #4400ff);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(255, 0, 90, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 40px;
+  color: white;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-shadow: 0px 0px 10px #ff0066, 0px 0px 20px #5500ff;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0px 0px 10px #ff0066; }
+  100% { text-shadow: 0px 0px 25px #5500ff; }
+}
+
+/* ======== CONTENEDOR GENERAL ======== */
+.container {
+  width: 85%;
+  margin: auto;
+  padding: 30px 0;
+}
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 15px;
+  border-left: 5px solid #ff0066;
+  padding-left: 10px;
+  font-weight: 700;
+}
+
+/* ======== GRID DE TARJETAS ======== */
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 25px;
+}
+
+/* ======== TARJETA ======== */
+.card {
+  background: #111111;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.4s;
+  cursor: pointer;
+  border: 1px solid #222;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px #ff00665b;
+}
+
+/* ======== IMAGEN ======== */
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1a1a1a;
+  color: #777;
+  font-size: 16px;
+}
+
+/* ======== CONTENIDO DE LA TARJETA ======== */
+.card-content {
+  padding: 15px;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ff0066;
+}
+
+.rating {
+  margin-top: 10px;
+  color: #f5d75c;
+  font-size: 18px;
+}
+
+/* ======== BOTÓN ELIMINAR ======== */
+.delete-btn {
+  margin-top: 12px;
+  background-color: #ff004c;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #b8003e;
+}
+
+/* ======== FORMULARIO ======== */
+.form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  background: #111111;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #222;
+}
+
+.form input,
+.form textarea {
+  margin-bottom: 12px;
+  padding: 13px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #1b1b1b;
+  color: white;
+}
+
+.add-btn {
+  background: linear-gradient(135deg, #ff0066, #7a00ff);
+  color: white;
+  padding: 14px;
+  font-size: 17px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff0066;
+}
