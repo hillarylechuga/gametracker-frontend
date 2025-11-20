@@ -2,15 +2,16 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./style.css";
 import "remixicon/fonts/remixicon.css";
+import "./styles/resenas.css";
 
 function App() {
   const [resenas, setResenas] = useState([]);
   const [juego, setJuego] = useState("");
   const [texto, setTexto] = useState("");
   const [puntuacion, setPuntuacion] = useState("");
-  const [imagen, setImagen] = useState(""); // 👉 NUEVO
+  const [imagen, setImagen] = useState(""); 
 
-  // Cargar reseñas del backend al iniciar
+  
   useEffect(() => {
     axios
       .get("https://gametracker-hl.onrender.com/api/resenas")
@@ -18,7 +19,7 @@ function App() {
       .catch((err) => console.error("Error al cargar reseñas:", err));
   }, []);
 
-  // Agregar nueva reseña
+  
   const agregarResena = async (e) => {
     e.preventDefault();
 
@@ -42,7 +43,7 @@ function App() {
     }
   };
 
-  // Eliminar reseña
+  
   const eliminarResena = async (id) => {
     try {
       await axios.delete(`https://gametracker-hl.onrender.com/api/resenas/${id}`);
@@ -65,7 +66,7 @@ function App() {
           {resenas.map((r) => (
             <div className="card" key={r._id}>
               
-              {/* 📸 Mostrar imagen */}
+              
               {r.imagen ? (
                 <img src={r.imagen} alt={r.juego} className="card-image" />
               ) : (
@@ -114,7 +115,7 @@ function App() {
             required
           />
 
-          {/* 📸 Campo de imagen */}
+          
           <input
             type="text"
             placeholder="URL de la imagen (opcional)"
